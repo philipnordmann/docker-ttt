@@ -1,4 +1,4 @@
-FROM steamcmd
+FROM refractix/steamcmd
 
 USER steam
 WORKDIR /home/steam/steamcmd
