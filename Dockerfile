@@ -16,6 +16,9 @@ USER root
 RUN chown steam /home/steam/create_server_cfg.sh /home/steam/start_server.sh && \
     chmod 755 /home/steam/create_server_cfg.sh /home/steam/start_server.sh
 
+EXPOSE 27015/udp
+EXPOSE 27015/tcp
+
 USER steam
 WORKDIR /home/steam/
 CMD [ "sh", "-c", "./start_server.sh" ]
