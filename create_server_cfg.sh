@@ -1,10 +1,10 @@
 #!/bin/bash
 
 SERVERCFG=${1}
-VARS="$(set | grep -E 'ttt_.*=' | sed "s/\'//g")"
+VARS="$(set | grep -E 'dttt_.*=' | sed "s/\'//g")"
 echo > ${SERVERCFG}
 for VAR in "${VARS}"; do
-  echo "${VAR}" | sed 's/ttt_//g' | awk -F= '{
+  echo "${VAR}" | sed 's/dttt_//g' | awk -F= '{
     if ($2 ~ /^[0-9]*$/)
       print $1 " " $2;
     else
