@@ -21,4 +21,4 @@ EXPOSE 27015/tcp
 
 USER steam
 WORKDIR /home/steam/
-CMD [ "sh", "-c", "./start_server.sh" ]
+CMD ./start_server.sh
