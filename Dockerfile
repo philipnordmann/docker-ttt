@@ -9,13 +9,15 @@ RUN ./steamcmd.sh +force_install_dir "/home/steam/content/tf2" +login anonymous 
 RUN ./steamcmd.sh +force_install_dir "/home/steam/content/css" +login anonymous +app_update 232330 validate +quit
 
 COPY mount.cfg /home/steam/gmodds/garrysmod/cfg/mount.cfg
-COPY server.cfg /home/steam/gmodds/garrysmod/cfg/server.cfg
 COPY create_server_cfg.sh /home/steam/create_server_cfg.sh
 COPY start_server.sh /home/steam/start_server.sh
 
 USER root
 RUN chown steam /home/steam/create_server_cfg.sh /home/steam/start_server.sh && \
     chmod 755 /home/steam/create_server_cfg.sh /home/steam/start_server.sh
+
+EXPOSE 27015/udp
+EXPOSE 27015/tcp
 
 USER steam
 WORKDIR /home/steam/
