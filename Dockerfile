@@ -17,4 +17,4 @@ EXPOSE 27015/tcp
 
 USER steam
 WORKDIR /home/steam/
-CMD ["/bin/bash", "/home/steam/bin/start_server.sh"]
+ENTRYPOINT ["/bin/bash", "/home/steam/bin/start_server.sh"]

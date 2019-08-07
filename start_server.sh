@@ -29,6 +29,7 @@ start_server(){
   echo "stopped server... exiting!"
 }
 
+echo "starting start_server.sh..."
 
 case ${1} in
     "init" )
